@@ -1,0 +1,68 @@
+export const products = [
+  {
+    id: 1,
+    name: 'Eternal Solitaire Ring',
+    category: 'Rings',
+    tag: 'Bestseller',
+    description: 'A timeless solitaire crafted in 18k gold, set with a brilliant-cut diamond that captures light from every angle.',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80',
+  },
+  {
+    id: 2,
+    name: 'Cascade Necklace',
+    category: 'Necklaces',
+    tag: 'New Arrival',
+    description: 'Delicate gold links cascade in layered elegance — designed to rest close to the heart.',
+    image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&q=80',
+  },
+  {
+    id: 3,
+    name: 'Lotus Drop Earrings',
+    category: 'Earrings',
+    tag: 'Handcrafted',
+    description: 'Inspired by the lotus bloom — these drop earrings feature intricate filigree work in antique gold.',
+    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80',
+  },
+  {
+    id: 4,
+    name: 'Heritage Bangle Set',
+    category: 'Bangles',
+    tag: 'Limited Edition',
+    description: 'A trio of stacking bangles rooted in traditional Indian craft, reimagined for the contemporary woman.',
+    image: 'https://images.unsplash.com/photo-1692249444938-1d39b550a441?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJhbmdsZXxlbnwwfHwwfHx8MA%3D%3D',
+  },
+  {
+    id: 5,
+    name: 'Star & Moon Pendant',
+    category: 'Pendants',
+    tag: 'Symbolic',
+    description: 'Feminine energy captured in gold — a delicate star and crescent pendant on an 18-inch chain.',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80',
+  },
+  {
+    id: 6,
+    name: 'Wrist Whisper Bracelet',
+    category: 'Bracelets',
+    tag: 'Stackable',
+    description: 'A sleek tennis bracelet set with pavé diamonds — the statement piece that lets the rest follow.',
+    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80',
+  },
+  {
+    id: 7,
+    name: 'Kundan Maang Tikka',
+    category: 'Bridal Sets',
+    tag: 'Bridal',
+    description: 'Regal kundan set in a maang tikka — for the bride who honours tradition while owning the room.',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80',
+  },
+  {
+    id: 8,
+    name: 'Infinity Band Ring',
+    category: 'Rings',
+    tag: 'Romantic',
+    description: 'An interlocking infinity band in two-tone gold, symbolising love that knows no end.',
+    image: 'https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?w=600&q=80',
+  },
+];
+
+export const categories = ['All', 'Rings', 'Necklaces', 'Earrings', 'Bracelets', 'Bangles', 'Pendants', 'Bridal Sets'];
