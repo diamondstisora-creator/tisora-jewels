@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`navbar${(scrolled || isProductPage) ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
+      <nav className={`navbar${(scrolled || isProductPage || menuOpen) ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="container navbar__inner">
           <Link to="/" className="navbar__logo" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
             <img src="/logo.jpg" alt="Tisora Logo" style={{ height: '32px', width: '32px', objectFit: 'cover', marginRight: '12px', borderRadius: '50%' }} />
