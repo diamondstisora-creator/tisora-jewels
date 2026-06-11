@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const links = [
   { to: '/',        label: 'Home' },
@@ -12,10 +12,15 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
+  const location = useLocation();
+
+  const isProductPage = location.pathname.startsWith('/product/');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener('scroll', onScroll, { passive: true });
+    // Run once on mount in case we are already scrolled
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -27,9 +32,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`navbar${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
+      <nav className={`navbar${(scrolled || isProductPage) ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="container navbar__inner">
-          <Link to="/" className="navbar__logo" onClick={() => setMenuOpen(false)}>
+          <Link to="/" className="navbar__logo" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/logo.jpg" alt="Tisora Logo" style={{ height: '32px', width: '32px', objectFit: 'cover', marginRight: '12px', borderRadius: '50%' }} />
             TISORA <span>JEWELS</span>
           </Link>
 

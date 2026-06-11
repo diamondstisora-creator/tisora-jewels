@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 export default function BlogCard({ blog, featured = false }) {
   if (featured) {
     return (
-      <div className="blog-featured reveal" style={{ display: 'grid' }}>
+      <Link to={`/blog/${blog.id}`} className="blog-featured reveal" style={{ display: 'grid' }}>
         <div className="blog-featured__image">
           <img
             src={blog.image}
@@ -19,12 +21,12 @@ export default function BlogCard({ blog, featured = false }) {
             {blog.excerpt}
           </p>
         </div>
-      </div>
+      </Link>
     );
   }
 
   return (
-    <div className="blog-card reveal" style={{ display: 'block' }}>
+    <Link to={`/blog/${blog.id}`} className="blog-card reveal" style={{ display: 'block' }}>
       <div className="blog-card__image">
         <img
           src={blog.image}
@@ -41,6 +43,6 @@ export default function BlogCard({ blog, featured = false }) {
         <h3 className="blog-card__title" style={{ transition: 'none' }}>{blog.title}</h3>
         <p className="blog-card__excerpt">{blog.excerpt}</p>
       </div>
-    </div>
+    </Link>
   );
 }

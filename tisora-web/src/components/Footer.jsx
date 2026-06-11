@@ -35,16 +35,18 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <p style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '22px',
-              fontWeight: 600,
-              letterSpacing: '0.14em',
-              color: 'var(--color-text-primary)',
-              marginBottom: 'var(--space-1)',
-            }}>
-              TISORA <span style={{ color: 'var(--color-gold-primary)' }}>JEWELS</span>
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 'var(--space-1)' }}>
+              <img src="/logo.jpg" alt="Tisora Logo" style={{ height: '32px', width: '32px', objectFit: 'cover', marginRight: '12px', borderRadius: '50%' }} />
+              <p style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '22px',
+                fontWeight: 600,
+                letterSpacing: '0.14em',
+                color: 'var(--color-text-primary)',
+              }}>
+                TISORA <span style={{ color: 'var(--color-gold-primary)' }}>JEWELS</span>
+              </p>
+            </div>
             <p style={{
               fontFamily: 'var(--font-display)',
               fontStyle: 'italic',

@@ -203,18 +203,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════ STATS ═══ */}
-      <section className="section" id="stats" aria-label="Brand statistics" style={{ padding: 'var(--space-7) 0' }}>
+      {/* ═══════════════════════════════════ ABOUT US ═══ */}
+      <section className="section" id="about-us" aria-label="About Us" style={{ padding: 'var(--space-7) 0', textAlign: 'center' }}>
         <div className="container">
-          <div className="stat-strip reveal">
-            {stats.map((s) => (
-              <div key={s.label} className="stat-item">
-                <div className="stat-item__num">
-                  <AnimatedCounter value={s.num} />
-                </div>
-                <div className="stat-item__label">{s.label}</div>
+          <h2 className="section__title reveal" style={{ marginBottom: 'var(--space-4)' }}>About Us</h2>
+          <p className="reveal reveal-delay-1" style={{ maxWidth: '800px', margin: '0 auto var(--space-6)', color: 'var(--color-text-secondary)', lineHeight: 1.8 }}>
+            Tisora has grown to become a globally trusted jeweler for fine jewelry over the last decade. Our expertise lies in our ability to produce a consistent supply of quality craftsmanship in 14K, 18K, and 22K gold, bringing you timeless designs that endure.
+          </p>
+          <div className="about-us-grid reveal reveal-delay-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-5)' }}>
+            <div className="about-us-card" style={{ textAlign: 'center' }}>
+              <div className="about-us-card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJpbmd8ZW58MHx8MHx8fDA%3D" alt="Our Value" className="about-us-card__img" />
               </div>
-            ))}
+              <h3 className="about-us-card__title">Our Value</h3>
+            </div>
+            <div className="about-us-card" style={{ textAlign: 'center' }}>
+              <div className="about-us-card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=500&q=80" alt="Our Vision" className="about-us-card__img" />
+              </div>
+              <h3 className="about-us-card__title">Our Vision</h3>
+            </div>
+            <div className="about-us-card" style={{ textAlign: 'center' }}>
+              <div className="about-us-card__img-wrapper">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt="Our Mission" className="about-us-card__img" />
+              </div>
+              <h3 className="about-us-card__title">Our Mission</h3>
+            </div>
           </div>
         </div>
       </section>
