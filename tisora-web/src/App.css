@@ -2014,3 +2014,10 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (min-width: 769px) {
+  .sticky-desktop {
+    position: sticky;
+    top: 100px;
+  }
+}

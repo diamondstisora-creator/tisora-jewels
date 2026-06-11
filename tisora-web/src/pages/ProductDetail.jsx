@@ -37,7 +37,7 @@ export default function ProductDetail() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 'var(--space-7)', alignItems: 'start' }}>
           
           {/* Left Column: Image */}
-          <div className="reveal" style={{ position: 'sticky', top: '100px' }}>
+          <div className="reveal sticky-desktop">
             <div style={{ 
               backgroundColor: 'var(--color-bg-secondary)', 
               borderRadius: 'var(--radius-lg)', 
