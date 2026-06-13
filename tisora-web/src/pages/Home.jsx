@@ -239,11 +239,11 @@ export default function Home() {
           <div className="section__header reveal">
             <SectionLabel>Our Collections</SectionLabel>
             <h2 id="collections-heading" className="section__title">
-              Six Stories,<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>One Name.</em>
+              WHAT ARE LABORATORY-GROWN<br />
+              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>DIAMONDS?</em>
             </h2>
-            <p className="section__sub">
-              Each collection is built around a different way to wear gold — and a different feeling it gives you when you do.
+            <p className="section__sub" style={{ maxWidth: '750px' }}>
+              Laboratory-grown diamonds are increasingly available in greater quantities, higher quality and new colors at price points that many find attractive. It is no wonder then that laboratory-grown diamonds are a growing presence in the marketplace.
             </p>
           </div>
 

@@ -34,8 +34,8 @@ export default function Navbar() {
     <>
       <nav className={`navbar${(scrolled || isProductPage || menuOpen) ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="container navbar__inner">
-          <Link to="/" className="navbar__logo" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.jpg" alt="Tisora Logo" style={{ height: '32px', width: '32px', objectFit: 'cover', marginRight: '12px', borderRadius: '50%' }} />
+          <Link to="/" className="navbar__logo" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', marginLeft: '-40px' }}>
+            <img src="/logo2.png" alt="Tisora Logo" style={{ height: '64px', width: 'auto', objectFit: 'contain', marginRight: '12px' }} />
             TISORA <span>JEWELS</span>
           </Link>
 
