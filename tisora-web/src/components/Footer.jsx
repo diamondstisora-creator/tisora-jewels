@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="container" style={{ padding: 'var(--space-7) var(--space-4)' }}>
         <div className="mobile-stack" style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr 1.4fr',
+          gridTemplateColumns: '2fr 1fr 1fr',
           gap: 'var(--space-6)',
         }}>
 
@@ -47,21 +47,31 @@ export default function Footer() {
                 TISORA <span style={{ color: 'var(--color-gold-primary)' }}>JEWELS</span>
               </p>
             </div>
-            <p style={{
-              fontFamily: 'var(--font-display)',
-              fontStyle: 'italic',
-              fontSize: '14px',
-              color: 'var(--color-text-muted)',
-              marginBottom: 'var(--space-3)',
-            }}>
-              Every piece, a promise.
-            </p>
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.85, maxWidth: '300px' }}>
-              Fine jewellery handcrafted in India since 2014. Worn by over 12,000 families — on the days that matter most, and every quiet day in between.
+              Cristal Diamonds, 201, Aashram Char Rasta, Bambavadi, Tunki, Katargam, Surat, Gujarat 395004
             </p>
 
             {/* Social */}
             <div style={{ display: 'flex', gap: '14px', marginTop: 'var(--space-4)' }}>
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+                style={{
+                  width: '40px', height: '40px',
+                  border: '1px solid var(--color-border)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'var(--color-text-muted)',
+                  transition: 'border-color 200ms ease, color 200ms ease',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-gold-primary)'; e.currentTarget.style.color = 'var(--color-gold-primary)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-text-muted)'; }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </a>
               <a
                 href="https://www.instagram.com/tisorajewels/"
                 target="_blank"
@@ -84,8 +94,10 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:hello@tisorajewels.com"
-                aria-label="Email Tisora Jewels"
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tisora Jewels on Facebook"
                 style={{
                   width: '40px', height: '40px',
                   border: '1px solid var(--color-border)',
@@ -96,9 +108,8 @@ export default function Footer() {
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-gold-primary)'; e.currentTarget.style.color = 'var(--color-gold-primary)'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-text-muted)'; }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
             </div>
@@ -132,33 +143,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Collections */}
-          <div>
-            <p style={{
-              fontSize: '11px',
-              fontWeight: 500,
-              letterSpacing: '0.24em',
-              textTransform: 'uppercase',
-              color: 'var(--color-gold-primary)',
-              marginBottom: 'var(--space-3)',
-            }}>
-              Collections
-            </p>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {collections.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    to={l.to}
-                    style={{ fontSize: '14px', color: 'var(--color-text-secondary)', transition: 'color 200ms ease' }}
-                    onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
-                    onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact */}
           <div>
@@ -176,12 +160,12 @@ export default function Footer() {
               <div>
                 <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Email</p>
                 <a
-                  href="mailto:hello@tisorajewels.com"
+                  href="mailto:tisorajewels@gmail.com"
                   style={{ fontSize: '14px', color: 'var(--color-text-secondary)', transition: 'color 200ms ease' }}
                   onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
                   onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
                 >
-                  hello@tisorajewels.com
+                  tisorajewels@gmail.com
                 </a>
               </div>
               <div>
@@ -198,8 +182,17 @@ export default function Footer() {
                 </a>
               </div>
               <div>
-                <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Workshop</p>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>Mumbai, India</p>
+                <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: '4px' }}>WhatsApp</p>
+                <a
+                  href="https://wa.me/919876543210"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px', color: 'var(--color-text-secondary)', transition: 'color 200ms ease' }}
+                  onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
+                  onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
+                >
+                  +91 98765 43210
+                </a>
               </div>
             </div>
           </div>

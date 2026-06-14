@@ -178,7 +178,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════ HERO ═══ */}
       <section className="hero" id="hero" aria-label="Hero">
         <video
-          src="/hero-video.webm"
+          src="/home-video.mp4"
           autoPlay
           loop
           muted
@@ -189,7 +189,7 @@ export default function Home() {
         <div className="hero__overlay" />
         <div className="hero__content">
           <h1 className="hero__title">
-            Jewellery That<br />
+            Diamonds That<br />
             <em>Carries a Story</em><br />
             For Lifetimes.
           </h1>
@@ -207,33 +207,36 @@ export default function Home() {
       <section className="section" id="about-us" aria-label="About Us" style={{ padding: 'var(--space-7) 0', textAlign: 'center' }}>
         <div className="container">
           <h2 className="section__title reveal" style={{ marginBottom: 'var(--space-4)' }}>About Us</h2>
-          <p className="reveal reveal-delay-1" style={{ maxWidth: '800px', margin: '0 auto var(--space-6)', color: 'var(--color-text-secondary)', lineHeight: 1.8 }}>
-            Tisora has grown to become a globally trusted jeweler for fine jewelry over the last decade. Our expertise lies in our ability to produce a consistent supply of quality craftsmanship in 14K, 18K, and 22K gold, bringing you timeless designs that endure.
+          <p className="reveal reveal-delay-1" style={{ maxWidth: '100%', margin: '0 auto var(--space-6)', color: 'var(--color-text-secondary)', lineHeight: 1.8 }}>
+            Over the last decade, Tisora has grown into a globally trusted name for fine jewelry. Our expertise lies in producing a consistent supply of quality craftsmanship in 14K, 18K, and 22K gold, bringing you timeless designs that endure. As direct manufacturers, we also specialize in creating premium lab-grown diamonds and crafting bespoke, custom diamond jewelry tailored to your unique vision.
           </p>
           <div className="about-us-grid reveal reveal-delay-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-5)' }}>
             <div className="about-us-card" style={{ textAlign: 'center' }}>
               <div className="about-us-card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJpbmd8ZW58MHx8MHx8fDA%3D" alt="Our Value" className="about-us-card__img" />
+                <img src="/our-value.webp" alt="Our Value" className="about-us-card__img" />
               </div>
               <h3 className="about-us-card__title">Our Value</h3>
+              <p className="about-us-card__sub">We never compromise on beauty. Every certified diamond we grow meets the highest standards for clarity, cut, and color. You get the exact strength and sparkle of a mined diamond, guaranteed.</p>
             </div>
             <div className="about-us-card" style={{ textAlign: 'center' }}>
               <div className="about-us-card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=500&q=80" alt="Our Vision" className="about-us-card__img" />
+                <img src="/our-vision.webp" alt="Our Vision" className="about-us-card__img" />
               </div>
               <h3 className="about-us-card__title">Our Vision</h3>
+              <p className="about-us-card__sub">Our vision is to become the leading global name in modern luxury by making premium diamonds accessible to everyone. We see a future where fine jewelry is defined by innovation, transparency, and personal design rather than high markups. By pushing the boundaries of technology and craftsmanship, we aim to inspire a smarter, more creative generation of luxury shoppers worldwide.</p>
             </div>
             <div className="about-us-card" style={{ textAlign: 'center' }}>
               <div className="about-us-card__img-wrapper">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt="Our Mission" className="about-us-card__img" />
+                <img src="/our-mission.webp" alt="Our Mission" className="about-us-card__img" />
               </div>
               <h3 className="about-us-card__title">Our Mission</h3>
+              <p className="about-us-card__sub">At Tisora Jewels, we make beautiful, high-quality jewelry affordable. Because we grow our own diamonds in a lab, we cut out middlemen and pass the savings to you. You get certified diamonds with the exact same sparkle, strength, and beauty as mined stones—but for 90% less. Using modern technology, we work with you to design custom, unique pieces made to last a lifetime.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════ COLLECTIONS ═══ */}
+      {/* ════════════════════════════════ LAB DIAMONDS ═══ */}
       <section className="section section--alt" id="collections" aria-labelledby="collections-heading">
         <div className="container">
           <div className="section__header reveal">
@@ -247,31 +250,86 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="categories-grid">
-            {categories.map((cat, i) => (
-              <Link
-                to="/products"
-                key={cat.name}
-                className={`category-card reveal reveal-delay-${(i % 4) + 1}`}
-                aria-label={`Browse ${cat.name}`}
-              >
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="category-card__img"
-                  loading="lazy"
-                />
-                <div className="category-card__overlay" />
-                <div className="category-card__body">
-                  <h3 className="category-card__name">{cat.name}</h3>
-                  <p className="category-card__sub">{cat.sub}</p>
-                  <span className="category-card__arrow">
-                    Browse Collection &rarr;
-                  </span>
-                </div>
-              </Link>
-            ))}
+          {/* ── Diamonds Marquee ── */}
+          <div className="diamond-marquee-wrapper reveal">
+            <div className="diamond-marquee">
+              <div className="diamond-marquee__track">
+                {/* Duplicate the items to allow seamless infinite scrolling */}
+                {[...Array(2)].map((_, i) => (
+                  <div key={i} className="diamond-marquee__items">
+                    <div className="diamond-shape">
+                      <img src="/heart_diamond.webp" alt="Heart Diamond" />
+                      <span>HEART</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/asscher_diamond.webp" alt="Asscher Diamond" />
+                      <span>ASSCHER</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/princess_diamond.webp" alt="Princess Diamond" />
+                      <span>PRINCESS</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/cushion_diamond.webp" alt="Cushion Diamond" />
+                      <span>CUSHION</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/oval_diamond.webp" alt="Oval Diamond" />
+                      <span>OVAL</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/round_diamond.webp" alt="Round Diamond" />
+                      <span>ROUND</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/radiant_diamond.webp" alt="Radiant Diamond" />
+                      <span>RADIANT</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/pear_diamond.webp" alt="Pear Diamond" />
+                      <span>PEAR</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/marquise_diamond.webp" alt="Marquise Diamond" />
+                      <span>MARQUISE</span>
+                    </div>
+                    <div className="diamond-shape">
+                      <img src="/emerald_diamond.webp" alt="Emerald Diamond" />
+                      <span>EMERALD</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* ── Split media row: image left / video right ── */}
+          <div className="lab-diamonds-split reveal reveal-delay-1">
+            <div className="lab-diamonds-split__left">
+              <img
+                src="/left-home.webp"
+                alt="Laboratory grown diamond craftsmanship"
+                className="lab-diamonds-split__img"
+              />
+              <div className="lab-diamonds-split__overlay" />
+              <div className="lab-diamonds-split__badge">
+                <span className="lab-diamonds-split__badge-text">We're the</span>
+                <em className="lab-diamonds-split__badge-em">maker</em>
+              </div>
+            </div>
+            <div className="lab-diamonds-split__right">
+              <video
+                src="/right-home.webm"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="lab-diamonds-split__video"
+              />
+              <div className="lab-diamonds-split__overlay" />
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -293,200 +351,25 @@ export default function Home() {
                 className="section__title"
                 style={{ textAlign: 'left' }}
               >
-                Every Piece Begins<br />
+                Every Partnership Begins <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>
-                  as a Feeling.
+                  with Precision.
                 </em>
               </h2>
               <p className="about-snippet__quote">
-                "We do not make jewellery. We make the moments that jewellery marks."
+                "We do not just manufacture jewelry. We engineer the reliability, quality, and scale that power your brand's growth."
               </p>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.85 }}>
-                Tisora was born from a single belief — that a woman should never have to choose between beauty and meaning.
-                Our collections are rooted in the richness of Indian craft and refined through a modern eye that understands
-                exactly how a piece should sit, catch light, and make you feel when you wear it.
+                Tisora was born from a single commercial belief — that global jewelry brands should never have to compromise between mass-production efficiency and artisanal integrity. Our business model is rooted in the rich heritage of Indian craftsmanship, accelerated by state-of-the-art gold metallurgy and advanced lab-grown diamond technology. We understand exactly how a commercial line must be optimized to maximize your margins, maintain exact consistency, and capture the market's light.
               </p>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.85, marginTop: '16px' }}>
-                Every ring, necklace, and bangle that leaves our workshop has been touched by hand, inspected with care,
-                and wrapped with the same intention with which it was made.
+                Every high-volume run of rings, necklaces, and bangles that leaves our production facility is subjected to rigorous industrial quality control, certified for absolute gold purity, and delivered with the seamless logistics your supply chain demands.
               </p>
               <Link to="/about" className="btn-ghost" style={{ marginTop: '12px' }}>
                 Read Our Full Story &rarr;
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════ PROMISES ═══ */}
-      <section className="section section--alt" id="promises" aria-labelledby="promises-heading">
-        <div className="container">
-          <div className="section__header reveal">
-            <SectionLabel>The Tisora Standard</SectionLabel>
-            <h2 id="promises-heading" className="section__title">
-              Four Pillars.<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>
-                One Promise.
-              </em>
-            </h2>
-          </div>
-          <div className="promises-grid">
-            {promises.map((p, i) => (
-              <div key={p.title} className={`promise-item reveal reveal-delay-${(i % 4) + 1}`}>
-                <div className="promise-item__num">{p.num}</div>
-                <h3 className="promise-item__title">{p.title}</h3>
-                <p className="promise-item__text">{p.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* ═══════════════════════════ FEATURED PRODUCTS ═══ */}
-      <section className="section" id="featured-products" aria-labelledby="featured-heading">
-        <div className="container">
-          <div className="section__header reveal">
-            <SectionLabel>Curated Selection</SectionLabel>
-            <h2 id="featured-heading" className="section__title">
-              Pieces That Make<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>
-                the Room Notice.
-              </em>
-            </h2>
-            <p className="section__sub">
-              Not every piece is for everyone. These are the ones that find their person and never let go.
-            </p>
-          </div>
-          <div className="products-grid">
-            {products.slice(0, 4).map((p, i) => (
-              <div key={p.id} className={`reveal reveal-delay-${(i % 4) + 1}`}>
-                <ProductCard product={p} />
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: 'var(--space-6)' }}>
-            <Link to="/products" className="btn-outlined">
-              View the Full Collection
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════ TESTIMONIALS MARQUEE ═══ */}
-      <section
-        className="section section--alt testimonials-section"
-        id="testimonials"
-        aria-labelledby="testimonials-heading"
-      >
-        <div className="section__header reveal" style={{ paddingBottom: 0 }}>
-          <div className="container">
-            <SectionLabel>Customer Stories</SectionLabel>
-            <h2 id="testimonials-heading" className="section__title">
-              12,000 Families.<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>
-                12,000 Reasons.
-              </em>
-            </h2>
-            <p className="section__sub" style={{ marginBottom: 'var(--space-5)' }}>
-              These are their words, not ours. Real customers. Real moments. Real jewellery that lasted.
-            </p>
-          </div>
-        </div>
-
-        {/* Row 1 — scrolls left */}
-        <div className="testimonial-marquee-wrapper">
-          <div className="testimonial-row testimonial-row--ltr" aria-label="Customer testimonials">
-            {[...testimonialsRow1, ...testimonialsRow1].map((t, i) => (
-              <TestimonialCard key={`r1-${i}`} t={t} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════ BLOG TEASER ═══ */}
-      <section className="section" id="blog-teaser" aria-labelledby="blog-teaser-heading">
-        <div className="container">
-          <div className="section__header reveal">
-            <SectionLabel>The Tisora Journal</SectionLabel>
-            <h2 id="blog-teaser-heading" className="section__title">
-              Jewellery Is Never<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>
-                Just a Piece of Metal.
-              </em>
-            </h2>
-            <p className="section__sub">
-              Stories on craft, style, care, and the quiet significance of the things we choose to wear.
-            </p>
-          </div>
-          <div className="blogs-grid">
-            {blogs.slice(0, 3).map((b, i) => (
-              <div key={b.id} className={`reveal reveal-delay-${i + 1}`}>
-                <BlogCard blog={b} />
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: 'var(--space-6)' }}>
-            <Link to="/blogs" className="btn-ghost">Browse All Articles &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════ INSTAGRAM ═══ */}
-      <section
-        className="section instagram-section"
-        id="instagram"
-        aria-labelledby="instagram-heading"
-        style={{ paddingBottom: 'var(--space-5)' }}
-      >
-        <div className="container">
-          <div className="reveal">
-            <SectionLabel>Instagram</SectionLabel>
-            <h2 id="instagram-heading" className="section__title">
-              Follow us on Instagram.
-            </h2>
-            <p className="section__sub" style={{ marginBottom: 'var(--space-5)' }}>
-              Follow @tisorajewels — and tag us when your piece arrives. We share every story.
-            </p>
-          </div>
-        </div>
-
-        <div
-          className="instagram-grid reveal"
-          aria-hidden="true"
-          style={{ maxWidth: '1280px', margin: '0 auto var(--space-5)', padding: '0 var(--space-4)' }}
-        >
-          {instagramImages.map((src, i) => (
-            <div key={i} className="instagram-tile">
-              <img src={src} alt={`Tisora jewellery worn ${i + 1}`} loading="lazy" />
-              <div className="instagram-tile__inner">
-                <svg
-                  className="instagram-tile__icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="1.5"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
-                </svg>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ textAlign: 'center' }}>
-          <a
-            href="https://www.instagram.com/tisorajewels/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outlined"
-            aria-label="Follow Tisora Jewels on Instagram"
-          >
-            Follow on Instagram
-          </a>
         </div>
       </section>
 
