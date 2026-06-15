@@ -8,31 +8,31 @@ const values = [
     num: '01',
     name: 'Integrity',
     desc: 'The whole process starts with designing. Craftsmen need to put the idea on the digital model. Using CAD (Computer Aided Design) software, the 3d designer will make a digital render of your jewelry.',
-    image: '/about11.jpg',
+    image: '/about11.webp',
   },
   {
     num: '02',
     name: 'Elegance',
     desc: 'That 3d model from the last step wasn’t only for you to see a sample ahead of time; it also serves as the basis for the next step, the wax model. In most modern jewelry production, the we uses a 3d printing machine to print a wax model made out of resin.',
-    image: '/about12.jpg',
+    image: '/about12.webp',
   },
   {
     num: '03',
     name: 'Heritage',
     desc: 'In the next step, the jewelry goes through the casting process.. At this stage, your piece starts looking more like the jewelry you might see in a store. The wax is melted away and is replaced with your metal of choice in molten form, usually gold, silver, or platinum. The metal then dries into the shape on your jewelry.',
-    image: '/about13.jpg',
+    image: '/about13.webp',
   },
   {
     num: '04',
     name: 'Innovation',
     desc: 'For this step, the diamond setter finally adds the diamonds or other gemstones onto your piece. He carefully sets the central stone into the mount. If side stones are involved, the setter needs to hand drill for these before setting. Using a microscope, they then set each separate stone.',
-    image: '/about14.jpg',
+    image: '/about14.webp',
   },
   {
     num: '05',
     name: 'Love',
     desc: 'In the final stage, a polisher works to make sure the metal is polished to perfection so it’s as shiny as possible. Any final additions such as engravings are also applied. Finally, the jewelry is inspected and each detail is analyzed to make sure production was successful.',
-    image: '/about15.jpg',
+    image: '/about15.webp',
   },
 ];
 
@@ -51,7 +51,7 @@ export default function About() {
         style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}
       >
         <img
-          src="/about-hero.png"
+          src="/about-hero.webp"
           alt="Fine jewellery crafted by hand"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
         />
@@ -81,7 +81,7 @@ export default function About() {
           <div className="brand-story-grid">
             <div className="brand-story-img reveal">
               <img
-                src="/about2.jpg"
+                src="/about2.webp"
                 alt="Tisora artisan shaping a piece of fine gold jewellery"
                 loading="lazy"
               />
