@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import SectionLabel from '../components/SectionLabel';
 import GoldDivider from '../components/GoldDivider';
 import useReveal from '../hooks/useReveal';
@@ -39,6 +39,107 @@ const subjects = [
   'Collaboration / Press',
 ];
 
+const CustomSelect = ({ options, value, onChange, name, placeholder }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (selectRef.current && !selectRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={selectRef} style={{ position: 'relative' }}>
+      <button
+        type="button"
+        className={`form-input`}
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          textAlign: 'left',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          color: value ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
+          cursor: 'pointer',
+        }}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+      >
+        <span>{value || placeholder}</span>
+        <svg
+          width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2"
+          style={{ transition: 'transform 250ms ease', transform: isOpen ? 'rotate(180deg)' : 'none' }}
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      <div
+        style={{
+          position: 'absolute',
+          top: '100%',
+          left: 0,
+          right: 0,
+          marginTop: '4px',
+          background: 'var(--color-white)',
+          border: '1px solid var(--color-border)',
+          boxShadow: '0 12px 30px rgba(80, 50, 5, 0.08)',
+          zIndex: 50,
+          opacity: isOpen ? 1 : 0,
+          visibility: isOpen ? 'visible' : 'hidden',
+          transform: isOpen ? 'translateY(0)' : 'translateY(-10px)',
+          transition: 'all 250ms cubic-bezier(0.16, 1, 0.3, 1)',
+          maxHeight: '260px',
+          overflowY: 'auto'
+        }}
+        role="listbox"
+      >
+        {options.map(opt => (
+          <div
+            key={opt}
+            role="option"
+            aria-selected={value === opt}
+            onClick={() => {
+              onChange({ target: { name, value: opt } });
+              setIsOpen(false);
+            }}
+            style={{
+              padding: '14px 18px',
+              cursor: 'pointer',
+              fontSize: '15px',
+              transition: 'all 200ms ease',
+              color: value === opt ? 'var(--color-gold-primary)' : 'var(--color-text-primary)',
+              background: value === opt ? 'var(--color-bg-secondary)' : 'transparent',
+              fontWeight: value === opt ? 500 : 300,
+            }}
+            onMouseEnter={e => {
+              if (value !== opt) {
+                e.target.style.background = 'var(--color-bg-secondary)';
+                e.target.style.color = 'var(--color-gold-primary)';
+                e.target.style.paddingLeft = '22px';
+              }
+            }}
+            onMouseLeave={e => {
+              if (value !== opt) {
+                e.target.style.background = 'transparent';
+                e.target.style.color = 'var(--color-text-primary)';
+                e.target.style.paddingLeft = '18px';
+              }
+            }}
+          >
+            {opt}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 
 export default function Contact() {
@@ -58,39 +159,20 @@ export default function Contact() {
   return (
     <main>
 
-      {/* ═══════════════════════════════ HERO ═══ */}
-      <section
-        style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}
-        aria-labelledby="contact-hero-heading"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80"
-          alt="Gold jewellery display"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        />
-        <div style={{
-          position: 'absolute', inset: 0, zIndex: 1,
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%)',
-        }} />
-        <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: 'calc(var(--space-6) + 40px)', paddingBottom: 'var(--space-7)' }}>
-          <div className="reveal" style={{ textAlign: 'center' }}>
-            <SectionLabel>Get in Touch</SectionLabel>
-            <h1 id="contact-hero-heading" className="page-hero__title" style={{ color: 'var(--color-white)', margin: '0 auto', maxWidth: '620px' }}>
-              Every Great Piece<br />
-              <em style={{ color: 'var(--color-gold-light)', fontStyle: 'italic' }}>
-                Begins with a Conversation.
-              </em>
-            </h1>
-            <p style={{ fontSize: '19px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.8, maxWidth: '500px', margin: 'var(--space-3) auto 0', fontWeight: 300 }}>
-              Whether you have a question, a custom piece in mind, or simply want to know more — we are here, and we are listening.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* ══════════════════════ CONTACT FORM + INFO ═══ */}
-      <section className="section" id="contact-main" aria-labelledby="contact-form-heading">
-        <div className="container">
+      <section
+        className="section"
+        id="contact-main"
+        aria-labelledby="contact-form-heading"
+        style={{
+          minHeight: '100vh',
+          paddingTop: '120px',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <div className="container" style={{ width: '100%' }}>
           <div className="contact-layout">
 
             {/* Left — Info */}
@@ -100,6 +182,26 @@ export default function Contact() {
                 We Respond<br />
                 <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>Within 24 Hours.</em>
               </h2>
+
+              <div className="contact-info__item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="contact-info__icon">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <div>
+                  <p className="contact-info__label">WhatsApp</p>
+                  <a
+                    href="https://wa.me/919876543210"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-info__value"
+                    style={{ transition: 'color 200ms ease' }}
+                    onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
+                    onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
+                  >
+                    +91 98765 43210
+                  </a>
+                </div>
+              </div>
 
               <div className="contact-info__item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="contact-info__icon">
@@ -142,21 +244,17 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="contact-info__item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="contact-info__icon">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-                <div>
-                  <p className="contact-info__label">Response Time</p>
-                  <p className="contact-info__value">Within 24 hours on business days. Often sooner.</p>
-                </div>
-              </div>
-
             </div>
 
             {/* Right — Form */}
-            <div className="reveal reveal-delay-2">
+            <div
+              className="reveal reveal-delay-2"
+              style={{
+                border: '1px solid var(--color-border-gold)',
+                borderRadius: 'var(--radius-md)',
+                padding: 'var(--space-4)',
+              }}
+            >
               <form onSubmit={handleSubmit} aria-label="Contact form" noValidate>
                 <div className="mobile-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-3)' }}>
                   <div className="form-group">
@@ -197,27 +295,20 @@ export default function Contact() {
                       name="phone"
                       type="tel"
                       className="form-input"
-                      placeholder="+91 00000 00000"
+                      placeholder="00000 00000"
                       value={form.phone}
                       onChange={handleChange}
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="contact-subject" className="form-label">Subject *</label>
-                    <select
-                      id="contact-subject"
+                    <CustomSelect
                       name="subject"
-                      className="form-select"
                       value={form.subject}
                       onChange={handleChange}
-                      required
-                      aria-required="true"
-                    >
-                      <option value="" disabled>Select a subject</option>
-                      {subjects.map((s) => (
-                        <option key={s} value={s}>{s}</option>
-                      ))}
-                    </select>
+                      options={subjects}
+                      placeholder="Select a subject"
+                    />
                   </div>
                 </div>
 
@@ -253,58 +344,6 @@ export default function Contact() {
                   </p>
                 )}
               </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* ═══════════════════════════════ FAQ ═══ */}
-      <section className="section" id="faq" aria-labelledby="faq-heading">
-        <div className="container">
-          <div className="mobile-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'var(--space-7)', alignItems: 'start' }}>
-            <div className="reveal">
-              <SectionLabel>Common Questions</SectionLabel>
-              <h2 id="faq-heading" className="section__title" style={{ textAlign: 'left', fontSize: 'clamp(32px, 3.8vw, 50px)' }}>
-                Things People<br />
-                <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>Often Ask Us.</em>
-              </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.85, marginTop: 'var(--space-3)' }}>
-                If your question is not here, please write to us. We take every message seriously and respond within a day.
-              </p>
-              <div style={{ marginTop: 'var(--space-4)', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                <img
-                  src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80"
-                  alt="Tisora gold ring detail"
-                  loading="lazy"
-                  style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
-            </div>
-
-            <div role="list">
-              {faqs.map((faq, i) => (
-                <div
-                  key={faq.q}
-                  className={`faq-item reveal reveal-delay-${(i % 3) + 1}${openFaq === i ? ' open' : ''}`}
-                  role="listitem"
-                >
-                  <div
-                    className="faq-question"
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    role="button"
-                    tabIndex={0}
-                    aria-expanded={openFaq === i}
-                    onKeyDown={(e) => e.key === 'Enter' && setOpenFaq(openFaq === i ? null : i)}
-                  >
-                    <h3 className="faq-q-text">{faq.q}</h3>
-                    <span className="faq-icon" aria-hidden="true">+</span>
-                  </div>
-                  <div className="faq-answer" aria-hidden={openFaq !== i}>
-                    <p className="faq-answer-text">{faq.a}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

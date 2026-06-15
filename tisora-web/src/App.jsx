@@ -11,7 +11,7 @@ import ProductDetail from './pages/ProductDetail';
 import Blogs   from './pages/Blogs';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
-import ScrollToTopButton from './components/ScrollToTopButton';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import './App.css';
 
 // Scroll to top on route change
@@ -64,7 +64,7 @@ function AppLayout() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-      <ScrollToTopButton />
+      <FloatingWhatsApp />
     </>
   );
 }

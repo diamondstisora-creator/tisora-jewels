@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const links = [
-  { to: '/',        label: 'Home' },
-  { to: '/about',   label: 'About' },
-  { to: '/products',label: 'Products' },
-  { to: '/blogs',   label: 'Blogs' },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/products', label: 'Customized Jewelry' },
+  { to: '/blogs', label: 'Blogs' },
   { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   const isProductPage = location.pathname.startsWith('/product/');
