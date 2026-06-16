@@ -20,30 +20,43 @@ export default function Products() {
 
       {/* ═══════════════════════════════ PAGE HERO ═══ */}
       <section
-        style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}
+        className="section section--alt"
+        id="products-hero"
         aria-labelledby="products-hero-heading"
+        style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '100px', paddingBottom: 'var(--space-6)' }}
       >
-        <img
-          src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1800&q=85"
-          alt="Tisora jewellery collection laid out on marble"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        />
-        <div style={{
-          position: 'absolute', inset: 0, zIndex: 1,
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%)',
-        }} />
-        <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: 'calc(var(--space-6) + 40px)', paddingBottom: 'var(--space-7)' }}>
-          <div className="reveal" style={{ textAlign: 'center' }}>
-            <SectionLabel>The Collections</SectionLabel>
-            <h1 id="products-hero-heading" className="page-hero__title" style={{ color: 'var(--color-white)', margin: '0 auto', maxWidth: '620px' }}>
-              Every Piece,<br />
-              <em style={{ color: 'var(--color-gold-light)', fontStyle: 'italic' }}>
-                Chosen with Intention.
-              </em>
-            </h1>
-            <p style={{ fontSize: '19px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.8, maxWidth: '500px', margin: 'var(--space-3) auto 0', fontWeight: 300 }}>
-              Fine jewellery for every occasion, every woman, every memory worth keeping.
-            </p>
+        <div className="container">
+          <div className="brand-story-grid">
+
+            {/* Left side: Image */}
+            <div className="brand-story-img reveal">
+              <img
+                src="/jewellery-img.webp"
+                alt="All Lab Grown Diamond Fine Jewelry"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '500px', borderRadius: '4px' }}
+                loading="eager"
+              />
+            </div>
+
+            {/* Right side: Text */}
+            <div className="reveal reveal-delay-2">
+              <SectionLabel>The Collections</SectionLabel>
+              <h1 id="products-hero-heading" className="section__title" style={{ textAlign: 'left', marginBottom: 'var(--space-4)', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.2 }}>
+                All Lab Grown<br />
+                <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>Diamond Fine Jewelry.</em>
+              </h1>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.85 }}>
+                  Discover the complete <strong>Lab Grown Diamond Fine Jewelry</strong> collection, where ethical sourcing meets spectacular brilliance. This extensive range includes everything from classic <strong>solitaire engagement rings</strong> and luxurious <strong>eternity bracelets</strong> to dazzling <strong>pendant necklaces</strong> and sophisticated earrings.
+                </p>
+
+                <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.85 }}>
+                  Our <strong>lab-created diamonds</strong> are chemically, physically, and optically identical to mined diamonds, offering guaranteed quality and exceptional fire. Choosing lab grown is a conscious commitment to sustainability and conflict-free luxury.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -97,24 +110,41 @@ export default function Products() {
         <div className="container">
           <div className="mobile-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-7)', alignItems: 'center' }}>
             <div className="reveal">
-              <SectionLabel>Bespoke Orders</SectionLabel>
-              <h2 id="custom-cta-heading" className="section__title" style={{ textAlign: 'left' }}>
-                Nothing in the Collection<br />
-                <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>Feels Quite Right?</em>
+              <h2 id="custom-cta-heading" className="section__title" style={{ textAlign: 'left', marginBottom: 'var(--space-4)', color: 'var(--color-gold-primary)' }}>
+                Customized
               </h2>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', lineHeight: 1.85, marginBottom: 'var(--space-4)', marginTop: 'var(--space-3)' }}>
-                The most meaningful pieces are often the ones that did not exist until someone imagined them.
-                Tell us what you have in mind — an occasion, an emotion, a memory — and our designers will
-                bring it to life in gold.
-              </p>
-              <Link to="/contact" className="btn-primary">Begin a Custom Commission</Link>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Share your designs or concept to get instant quotes
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Freedom to customize your Jewelry and designs according to your requirements.
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> 3d CAD designing
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> High quality jewelry renders image.
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Custom Text engraving for your loved ones.
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Engrave your company's Logo on Jewelry.
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Professional Photos and videos of Products.
+                </p>
+              </div>
             </div>
-            <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-              <img
-                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=80"
-                alt="Custom jewellery design sketch and gold"
-                loading="lazy"
-                style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
+            <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', border: '1px solid var(--color-border)', borderRadius: '4px', maxWidth: '320px', margin: '0 auto', width: '100%' }}>
+              <video
+                src="/jewellery-video.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }}
               />
             </div>
           </div>

@@ -211,13 +211,13 @@ export default function Contact() {
                 <div>
                   <p className="contact-info__label">Email</p>
                   <a
-                    href="mailto:hello@tisorajewels.com"
+                    href="mailto:tisorajewels@gmail.com"
                     className="contact-info__value"
                     style={{ transition: 'color 200ms ease' }}
                     onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
                     onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
                   >
-                    hello@tisorajewels.com
+                    tisorajewels@gmail.com
                   </a>
                 </div>
               </div>

@@ -53,9 +53,39 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <Link to="/products" className="navbar__cta" aria-label="Explore Collection">
-            Explore Collection
-          </Link>
+          <div className="navbar__contact-info" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '10px' }}>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontFamily: 'var(--font-display)',
+              fontSize: '18px',
+              fontWeight: 500,
+              color: 'var(--color-gold-light)',
+              textDecoration: 'none',
+              letterSpacing: '0.02em',
+              lineHeight: 1,
+              transition: 'color var(--transition-fast)'
+            }}
+            onMouseEnter={e => e.target.style.color = '#ffffff'}
+            onMouseLeave={e => e.target.style.color = 'var(--color-gold-light)'}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ pointerEvents: 'none' }}>
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              +91 98765 43210
+            </a>
+            <span style={{
+              fontSize: '10px',
+              fontWeight: 500,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.7)',
+              lineHeight: 1
+            }}>
+              Worldwide Delivery
+            </span>
+          </div>
 
           <button
             className={`navbar__hamburger${menuOpen ? ' open' : ''}`}

@@ -6,31 +6,31 @@ import useReveal from '../hooks/useReveal';
 const values = [
   {
     num: '01',
-    name: 'Integrity',
+    name: 'Designing 3D CAD',
     desc: 'The whole process starts with designing. Craftsmen need to put the idea on the digital model. Using CAD (Computer Aided Design) software, the 3d designer will make a digital render of your jewelry.',
     image: '/about11.webp',
   },
   {
     num: '02',
-    name: 'Elegance',
+    name: 'Wax Printing Jewelry',
     desc: 'That 3d model from the last step wasn’t only for you to see a sample ahead of time; it also serves as the basis for the next step, the wax model. In most modern jewelry production, the we uses a 3d printing machine to print a wax model made out of resin.',
     image: '/about12.webp',
   },
   {
     num: '03',
-    name: 'Heritage',
+    name: 'Casting into Metal',
     desc: 'In the next step, the jewelry goes through the casting process.. At this stage, your piece starts looking more like the jewelry you might see in a store. The wax is melted away and is replaced with your metal of choice in molten form, usually gold, silver, or platinum. The metal then dries into the shape on your jewelry.',
     image: '/about13.webp',
   },
   {
     num: '04',
-    name: 'Innovation',
+    name: 'Stone Setting Process',
     desc: 'For this step, the diamond setter finally adds the diamonds or other gemstones onto your piece. He carefully sets the central stone into the mount. If side stones are involved, the setter needs to hand drill for these before setting. Using a microscope, they then set each separate stone.',
     image: '/about14.webp',
   },
   {
     num: '05',
-    name: 'Love',
+    name: 'Polishing, Finishing',
     desc: 'In the final stage, a polisher works to make sure the metal is polished to perfection so it’s as shiny as possible. Any final additions such as engravings are also applied. Finally, the jewelry is inspected and each detail is analyzed to make sure production was successful.',
     image: '/about15.webp',
   },
@@ -69,7 +69,7 @@ export default function About() {
               </em>
             </h1>
             <p style={{ fontSize: '19px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.8, maxWidth: '620px', margin: 'var(--space-3) auto 0', fontWeight: 300 }}>
-              We are leading manufacturer of Diamond and All type jewellery. We are build a single platform where reseller and store owner buy directly from manufacturer.
+              Direct from the factory to your store. Save time, cut extra costs, and grow your business with Tisore Jewels.
             </p>
           </div>
         </div>
@@ -127,8 +127,7 @@ export default function About() {
           <div className="section__header reveal">
             <SectionLabel>What We Stand For</SectionLabel>
             <h2 id="values-heading" className="section__title">
-              Five Values.<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-gold-primary)' }}>Non-Negotiable.</em>
+              How Jewelry Manufacturing works
             </h2>
           </div>
           <div className="mobile-stack-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 'var(--space-3)' }}>
