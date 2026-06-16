@@ -108,7 +108,7 @@ export default function Products() {
       {/* ════════════════════════════ CUSTOM CTA ═══ */}
       <section className="section" id="custom-order-cta" aria-labelledby="custom-cta-heading">
         <div className="container">
-          <div className="mobile-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-7)', alignItems: 'center' }}>
+          <div className="mobile-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-7)', alignItems: 'center', border: '1px solid rgba(197, 168, 128, 0.3)', borderRadius: '8px', padding: 'var(--space-6)' }}>
             <div className="reveal">
               <h2 id="custom-cta-heading" className="section__title" style={{ textAlign: 'left', marginBottom: 'var(--space-4)', color: 'var(--color-gold-primary)' }}>
                 Customized
@@ -136,8 +136,9 @@ export default function Products() {
                   <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Professional Photos and videos of Products.
                 </p>
               </div>
+              <Link to="/contact" className="btn-primary" style={{ marginTop: 'var(--space-5)', display: 'inline-block' }}>Begin a Custom Commission</Link>
             </div>
-            <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', border: '1px solid var(--color-border)', borderRadius: '4px', maxWidth: '320px', margin: '0 auto', width: '100%' }}>
+            <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', borderRadius: '4px', maxWidth: '320px', margin: '0 auto', width: '100%' }}>
               <video
                 src="/jewellery-video.webm"
                 autoPlay
