@@ -388,9 +388,10 @@ export default function BlogDetail() {
         backgroundColor: '#ffffff',
         display: 'flex',
         justifyContent: 'center',
-        width: '100%'
+        width: '100%',
+        overflow: 'hidden'
       }}>
-        <img src="/blogs/IGI.webp" alt="IGI Certified Diamonds" style={{ maxWidth: '200px', display: 'block' }} />
+        <img src="/blogs/IGI.webp" alt="IGI Certified Diamonds" style={{ maxWidth: '200px', display: 'block', transform: 'scale(1.4)' }} />
       </div>
 
       {/* Back Link */}

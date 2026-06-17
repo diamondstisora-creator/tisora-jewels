@@ -41,13 +41,14 @@ export default function Blogs() {
       </section>
 
       {/* Full-width Certification Logo Strip */}
-      <section className="reveal" style={{ 
-        backgroundColor: '#ffffff', 
-        display: 'flex', 
-        justifyContent: 'center', 
-        width: '100%'
+      <section className="reveal" style={{
+        backgroundColor: '#ffffff',
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+        overflow: 'hidden'
       }}>
-        <img src="/blogs/IGI.webp" alt="IGI Certified Diamonds" style={{ maxWidth: '200px', display: 'block' }} />
+        <img src="/blogs/IGI.webp" alt="IGI Certified Diamonds" style={{ maxWidth: '200px', display: 'block', transform: 'scale(1.4)' }} />
       </section>
 
     </main>
