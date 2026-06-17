@@ -28,7 +28,7 @@ function Blog1Content() {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'start' }}>
         <div>
-          <img src="/blogs/2.1.webp" alt="HPHT method" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/2.webp" alt="HPHT method" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>1. High Pressure High Temperature (HPHT):</h3>
@@ -59,14 +59,14 @@ function Blog1Content() {
           </ol>
         </div>
         <div>
-          <img src="/blogs/4.webp" alt="Advantages" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.webp" alt="Advantages" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
       </div>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>Challenges and Concerns:</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
-          <img src="/blogs/3.1.webp" alt="Challenges" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/4.webp" alt="Challenges" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
         <div>
           <ol style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -107,10 +107,10 @@ function Blog1Content() {
 function Blog2Content() {
   return (
     <div style={{ color: '#b0b0b0', maxWidth: '900px', margin: '0 auto', padding: '0 20px', fontFamily: 'var(--font-body)', fontSize: '16px', lineHeight: 1.8 }}>
-      
+
       {/* Intro Image */}
       <div style={{ marginBottom: '40px' }}>
-        <img src="/blogs/2.webp" alt="Lab Grown vs Natural Diamonds" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }} />
+        <img src="/blogs/2.1.webp" alt="Lab Grown vs Natural Diamonds" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }} />
       </div>
 
       <p style={{ marginBottom: '60px' }}>
@@ -136,7 +136,7 @@ function Blog2Content() {
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>Ethical and Environmental Considerations:</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '32px', alignItems: 'center' }}>
         <div>
-          <img src="/blogs/3.1.webp" alt="Ethical Considerations" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/2.2.webp" alt="Ethical Considerations" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>Mined Diamonds:</h3>
@@ -176,7 +176,7 @@ function Blog2Content() {
           </p>
         </div>
         <div>
-          <img src="/blogs/3.webp" alt="Lab-Grown Diamonds" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/2.3.webp" alt="Lab-Grown Diamonds" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
       </div>
 
@@ -194,10 +194,10 @@ function Blog2Content() {
 function Blog3Content() {
   return (
     <div style={{ color: '#b0b0b0', maxWidth: '900px', margin: '0 auto', padding: '0 20px', fontFamily: 'var(--font-body)', fontSize: '16px', lineHeight: 1.8 }}>
-      
+
       {/* Intro Image */}
       <div style={{ marginBottom: '40px' }}>
-        <img src="/blogs/3.2.webp" alt="Lab-Grown Diamonds Shine for Sustainability" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }} />
+        <img src="/blogs/3.1.webp" alt="Lab-Grown Diamonds Shine for Sustainability" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }} />
       </div>
 
       <p style={{ marginBottom: '60px' }}>
@@ -205,7 +205,7 @@ function Blog3Content() {
       </p>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>I. The Environmental Impact of Traditional Diamond Mining:</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>A. Ecological Disturbances:</h3>
@@ -218,15 +218,15 @@ function Blog3Content() {
           </p>
         </div>
         <div>
-          <img src="/blogs/3.4.webp" alt="Environmental Impact" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.2.webp" alt="Environmental Impact" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
       </div>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>II. Lab-Grown Diamonds and Environmental Sustainability:</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
-          <img src="/blogs/3.5.webp" alt="Environmental Sustainability" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.3.webp" alt="Environmental Sustainability" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>A. Reduced Environmental Footprint:</h3>
@@ -241,7 +241,7 @@ function Blog3Content() {
       </div>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>III. Ethical Considerations and Social Responsibility:</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>A. Conflict-Free Diamonds:</h3>
@@ -254,15 +254,15 @@ function Blog3Content() {
           </p>
         </div>
         <div>
-          <img src="/blogs/3.1.webp" alt="Ethical Considerations" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.4.webp" alt="Ethical Considerations" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
       </div>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>IV. The Technological Marvel of Lab-Grown Diamonds:</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
-          <img src="/blogs/3.3.webp" alt="Technological Marvel" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.5.webp" alt="Technological Marvel" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>A. High-Quality Standards:</h3>
@@ -277,7 +277,7 @@ function Blog3Content() {
       </div>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>V. Consumer Awareness and Acceptance:</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>A. Changing Perspectives:</h3>
@@ -290,15 +290,15 @@ function Blog3Content() {
           </p>
         </div>
         <div>
-          <img src="/blogs/3.7.webp" alt="Consumer Awareness" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.6.webp" alt="Consumer Awareness" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
       </div>
 
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: '#fff', marginBottom: '24px' }}>VI. Challenges and Future Prospects:</h2>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px', alignItems: 'center' }}>
         <div>
-          <img src="/blogs/3.2.webp" alt="Challenges and Future" style={{ width: '100%', borderRadius: '8px' }} />
+          <img src="/blogs/3.7.webp" alt="Challenges and Future" style={{ width: '100%', borderRadius: '8px' }} />
         </div>
         <div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', color: '#fff', marginBottom: '16px' }}>A. Public Perception:</h3>
@@ -384,10 +384,10 @@ export default function BlogDetail() {
       )}
 
       {/* Global Full-width Certification Logo Strip for Sub-Blogs */}
-      <div className="reveal" style={{ 
-        backgroundColor: '#ffffff', 
-        display: 'flex', 
-        justifyContent: 'center', 
+      <div className="reveal" style={{
+        backgroundColor: '#ffffff',
+        display: 'flex',
+        justifyContent: 'center',
         width: '100%'
       }}>
         <img src="/blogs/IGI.webp" alt="IGI Certified Diamonds" style={{ maxWidth: '200px', display: 'block' }} />
@@ -397,7 +397,7 @@ export default function BlogDetail() {
       <div style={{ marginTop: 'var(--space-6)', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 'var(--space-5)' }}>
         <Link to="/blogs" style={{
           display: 'inline-block',
-          border: '1px solid #D4A017',  
+          border: '1px solid #D4A017',
           color: '#D4A017',
           padding: '10px 24px',
           borderRadius: '30px',
