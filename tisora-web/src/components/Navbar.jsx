@@ -24,11 +24,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when menu is open
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
+  // Scroll lock removed for dropdown menu
 
   return (
     <>
@@ -98,22 +94,50 @@ export default function Navbar() {
             <span />
           </button>
         </div>
-      </nav>
 
-      {/* Mobile overlay menu */}
-      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} role="dialog" aria-modal="true">
-        {links.map((l) => (
-          <NavLink
-            key={l.to}
-            to={l.to}
-            end={l.to === '/'}
-            className="mobile-menu__link"
-            onClick={() => setMenuOpen(false)}
-          >
-            {l.label}
-          </NavLink>
-        ))}
-      </div>
+        {/* Dropdown Mobile Menu */}
+        <div className={`mobile-menu${menuOpen ? ' open' : ''}`} role="dialog" aria-modal="true">
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === '/'}
+              className="mobile-menu__link"
+              onClick={() => setMenuOpen(false)}
+            >
+              {l.label}
+            </NavLink>
+          ))}
+          
+          {/* Mobile Contact Info */}
+          <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px', width: '100%' }}>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontFamily: 'var(--font-display)',
+              fontSize: '16px',
+              fontWeight: 500,
+              color: 'var(--color-gold-primary)',
+              textDecoration: 'none'
+            }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              +91 98765 43210
+            </a>
+            <span style={{
+              fontSize: '10px',
+              fontWeight: 500,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.6)'
+            }}>
+              Worldwide Delivery
+            </span>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }
