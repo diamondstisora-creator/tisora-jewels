@@ -42,6 +42,13 @@ export default function Products() {
 
   return (
     <main>
+      <style>{`
+        @media (max-width: 768px) {
+          .mobile-hidden {
+            display: none !important;
+          }
+        }
+      `}</style>
 
       {/* ═══════════════════════════════ PAGE HERO ═══ */}
       <section
@@ -190,21 +197,21 @@ export default function Products() {
                 
                 {/* Right side: Product Info */}
                 <div style={{ flex: '1 1 300px', padding: 'var(--space-5)', overflowY: 'auto', maxHeight: '90vh', color: '#ffffff' }}>
-                  <span className="product-card__tag" style={{ display: 'inline-block', marginBottom: 'var(--space-2)', color: '#ffffff', borderColor: '#ffffff' }}>{selectedProduct.category}</span>
+                  <span className="product-card__tag mobile-hidden" style={{ display: 'inline-block', marginBottom: 'var(--space-2)', color: '#ffffff', borderColor: '#ffffff' }}>{selectedProduct.category}</span>
                   <h2 style={{ fontSize: '32px', marginBottom: 'var(--space-2)', fontFamily: 'var(--font-display)', fontWeight: 400, color: '#ffffff' }}>{selectedProduct.name}</h2>
                   <p style={{ fontSize: '24px', color: '#ffffff', marginBottom: 'var(--space-4)' }}>{selectedProduct.price}</p>
                   
-                  <div style={{ marginBottom: 'var(--space-4)' }}>
+                  <div className="mobile-hidden" style={{ marginBottom: 'var(--space-4)' }}>
                     <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Description</h4>
                     <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.overview}</p>
                   </div>
                   
-                  <div style={{ marginBottom: 'var(--space-5)' }}>
+                  <div className="mobile-hidden" style={{ marginBottom: 'var(--space-5)' }}>
                     <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Materials</h4>
                     <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.materials}</p>
                   </div>
                   
-                  <div style={{ display: 'flex', gap: '16px' }}>
+                  <div className="mobile-hidden" style={{ display: 'flex', gap: '16px' }}>
                     <Link to="/contact" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600 }}>
                       INQUIRE NOW
                     </Link>
