@@ -128,6 +128,7 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="product-card__body">
+                  <span className="product-card__tag">Customized</span>
                   <h3 className="product-card__name">{p.name}</h3>
                 </div>
               </div>
@@ -194,6 +195,7 @@ export default function Products() {
                 
                 {/* Right side: Product Info */}
                 <div style={{ flex: '1 1 300px', padding: 'var(--space-5)', overflowY: 'auto', maxHeight: '90vh', color: '#ffffff' }}>
+                  <span className="product-card__tag mobile-hidden" style={{ display: 'inline-block', marginBottom: 'var(--space-2)', color: '#ffffff', borderColor: '#ffffff' }}>Customized</span>
                   <h2 style={{ fontSize: '32px', marginBottom: 'var(--space-2)', fontFamily: 'var(--font-display)', fontWeight: 400, color: '#ffffff' }}>{selectedProduct.name}</h2>
                   
                   <div className="mobile-hidden" style={{ marginBottom: 'var(--space-4)' }}>

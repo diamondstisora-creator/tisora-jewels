@@ -88,6 +88,20 @@ export default function ProductDetail() {
           <div className="reveal reveal-delay-2" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
             
             <div>
+              <span style={{ 
+                display: 'inline-block', 
+                fontSize: '12px', 
+                fontWeight: 600, 
+                letterSpacing: '0.1em', 
+                textTransform: 'uppercase', 
+                color: 'var(--color-gold-primary)', 
+                backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                padding: '6px 12px',
+                borderRadius: '20px',
+                marginBottom: 'var(--space-3)'
+              }}>
+                Customized
+              </span>
               <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(32px, 5vw, 48px)', color: 'var(--color-text-primary)', lineHeight: 1.1, marginBottom: 'var(--space-3)' }}>
                 {product.name}
               </h1>
