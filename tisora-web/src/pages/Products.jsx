@@ -128,10 +128,7 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="product-card__body">
-                  <span className="product-card__tag">{p.tag}</span>
-                  <p className="product-card__category">{p.category}</p>
                   <h3 className="product-card__name">{p.name}</h3>
-                  <p className="product-card__desc" style={{ marginTop: '8px', fontWeight: 'bold' }}>{p.price}</p>
                 </div>
               </div>
             ))}
@@ -197,9 +194,7 @@ export default function Products() {
                 
                 {/* Right side: Product Info */}
                 <div style={{ flex: '1 1 300px', padding: 'var(--space-5)', overflowY: 'auto', maxHeight: '90vh', color: '#ffffff' }}>
-                  <span className="product-card__tag mobile-hidden" style={{ display: 'inline-block', marginBottom: 'var(--space-2)', color: '#ffffff', borderColor: '#ffffff' }}>{selectedProduct.category}</span>
                   <h2 style={{ fontSize: '32px', marginBottom: 'var(--space-2)', fontFamily: 'var(--font-display)', fontWeight: 400, color: '#ffffff' }}>{selectedProduct.name}</h2>
-                  <p style={{ fontSize: '24px', color: '#ffffff', marginBottom: 'var(--space-4)' }}>{selectedProduct.price}</p>
                   
                   <div className="mobile-hidden" style={{ marginBottom: 'var(--space-4)' }}>
                     <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Description</h4>
@@ -212,9 +207,9 @@ export default function Products() {
                   </div>
                   
                   <div className="mobile-hidden" style={{ display: 'flex', gap: '16px' }}>
-                    <Link to="/contact" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600 }}>
+                    <a href={`https://wa.me/919876543210?text=${encodeURIComponent(`Hi, I'm interested in the ${selectedProduct.name}.`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                       INQUIRE NOW
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
