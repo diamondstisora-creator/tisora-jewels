@@ -1,19 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SectionLabel from '../components/SectionLabel';
-import GoldDivider from '../components/GoldDivider';
-import ProductCard from '../components/ProductCard';
 import useReveal from '../hooks/useReveal';
-import { products, categories } from '../data/products';
+import { products } from '../data/products';
 
 
 export default function Products() {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedProduct, setSelectedProduct] = useState(null);
   useReveal();
 
-  const filtered = activeFilter === 'All'
-    ? products
-    : products.filter((p) => p.category === activeFilter);
+  const displayProducts = Array.from({ length: 16 }, (_, i) => {
+    const baseProduct = products[i % products.length];
+    return {
+      ...baseProduct,
+      uid: `prod-${i + 1}`,
+      video: `/products/PRODUCT${i + 1}.webm`
+    };
+  });
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setSelectedProduct(null);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
+
+  useEffect(() => {
+    if (selectedProduct) {
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+    } else {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    }
+    return () => {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    };
+  }, [selectedProduct]);
 
   return (
     <main>
@@ -66,38 +91,126 @@ export default function Products() {
         <div className="container">
           <h2 id="products-grid-heading" className="sr-only">Product Collection</h2>
 
-          {/* Filter Bar */}
-          <div className="filter-bar" role="tablist" aria-label="Filter by category">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                role="tab"
-                aria-selected={activeFilter === cat}
-                className={`filter-btn${activeFilter === cat ? ' active' : ''}`}
-                onClick={() => setActiveFilter(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
           {/* Products Grid */}
-          <div className="products-grid">
-            {filtered.map((p, i) => (
-              <div key={p.id} className={`reveal reveal-delay-${(i % 4) + 1}`}>
-                <ProductCard product={p} />
+          <div className="products-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: 'var(--space-5)'
+          }}>
+            {displayProducts.map((p, i) => (
+              <div 
+                key={p.uid} 
+                className={`product-card reveal reveal-delay-${(i % 4) + 1}`}
+                onClick={() => setSelectedProduct(p)}
+                style={{ cursor: 'pointer', display: 'block', boxShadow: 'none' }}
+              >
+                <div className="product-card__image">
+                  <video
+                    src={p.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="product-card__img"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'none', transform: 'none' }}
+                  />
+                  <div className="product-card__overlay" style={{ backdropFilter: 'none', WebkitBackdropFilter: 'none', backgroundColor: 'transparent' }}>
+                    <span className="btn-outlined" style={{ fontSize: '12px', padding: '10px 20px', color: '#fff', borderColor: '#fff' }}>
+                      View Details
+                    </span>
+                  </div>
+                </div>
+                <div className="product-card__body">
+                  <span className="product-card__tag">{p.tag}</span>
+                  <p className="product-card__category">{p.category}</p>
+                  <h3 className="product-card__name">{p.name}</h3>
+                  <p className="product-card__desc" style={{ marginTop: '8px', fontWeight: 'bold' }}>{p.price}</p>
+                </div>
               </div>
             ))}
           </div>
 
-          {filtered.length === 0 && (
-            <div style={{ textAlign: 'center', padding: 'var(--space-7) 0', color: 'var(--color-text-muted)' }}>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 400 }}>
-                No pieces found in this category.
-              </p>
-              <p style={{ fontSize: '16px', marginTop: 'var(--space-2)' }}>
-                Try another filter or browse the full collection.
-              </p>
+          {/* Modal */}
+          {selectedProduct && (
+            <div 
+              style={{
+                position: 'fixed',
+                top: 0, left: 0, right: 0, bottom: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                zIndex: 9999,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 'var(--space-4)'
+              }}
+              onClick={() => setSelectedProduct(null)}
+            >
+              <div 
+                style={{
+                  backgroundColor: '#000000',
+                  borderRadius: '12px',
+                  maxWidth: '1000px',
+                  width: '100%',
+                  maxHeight: '90vh',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button 
+                  onClick={() => setSelectedProduct(null)}
+                  style={{
+                    position: 'absolute', top: '16px', right: '16px',
+                    background: 'rgba(0,0,0,0.5)', color: '#fff',
+                    border: 'none', borderRadius: '50%',
+                    width: '32px', height: '32px',
+                    cursor: 'pointer', zIndex: 10,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                  }}
+                >
+                  ✕
+                </button>
+                
+                {/* Left side: Video */}
+                <div style={{ flex: '1 1 300px', backgroundColor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
+                  <video
+                    src={selectedProduct.video}
+                    autoPlay
+                    controls
+                    loop
+                    playsInline
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', maxHeight: '90vh' }}
+                  />
+                </div>
+                
+                {/* Right side: Product Info */}
+                <div style={{ flex: '1 1 300px', padding: 'var(--space-5)', overflowY: 'auto', maxHeight: '90vh', color: '#ffffff' }}>
+                  <span className="product-card__tag" style={{ display: 'inline-block', marginBottom: 'var(--space-2)', color: '#ffffff', borderColor: '#ffffff' }}>{selectedProduct.category}</span>
+                  <h2 style={{ fontSize: '32px', marginBottom: 'var(--space-2)', fontFamily: 'var(--font-display)', fontWeight: 400, color: '#ffffff' }}>{selectedProduct.name}</h2>
+                  <p style={{ fontSize: '24px', color: '#ffffff', marginBottom: 'var(--space-4)' }}>{selectedProduct.price}</p>
+                  
+                  <div style={{ marginBottom: 'var(--space-4)' }}>
+                    <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Description</h4>
+                    <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.overview}</p>
+                  </div>
+                  
+                  <div style={{ marginBottom: 'var(--space-5)' }}>
+                    <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Materials</h4>
+                    <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.materials}</p>
+                  </div>
+                  
+                  <div style={{ display: 'flex', gap: '16px' }}>
+                    <Link to="/contact" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600 }}>
+                      INQUIRE NOW
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
         </div>
