@@ -47,6 +47,14 @@ export default function Products() {
           .mobile-hidden {
             display: none !important;
           }
+          #products-hero {
+            align-items: flex-start !important;
+            padding-top: 120px !important;
+            min-height: auto !important;
+          }
+          .brand-story-img img {
+            min-height: 350px !important;
+          }
         }
       `}</style>
 

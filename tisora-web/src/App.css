@@ -1304,7 +1304,11 @@
   }
 
   .about-snippet__visual {
-    aspect-ratio: 4/3;
+    aspect-ratio: 4/5;
+  }
+
+  .about-snippet__visual img {
+    object-position: left center;
   }
 }
 
