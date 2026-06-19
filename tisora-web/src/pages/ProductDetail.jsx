@@ -183,39 +183,7 @@ export default function ProductDetail() {
                 </div>
               </div>
 
-              {/* Details & Ingredients Accordion */}
-              <div style={{ borderBottom: '1px solid var(--color-border)' }}>
-                <button 
-                  onClick={() => toggleAccordion('details')}
-                  style={{ 
-                    width: '100%', 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center', 
-                    background: 'none', 
-                    border: 'none', 
-                    padding: 'var(--space-3) 0', 
-                    fontFamily: 'var(--font-display)', 
-                    fontSize: '20px', 
-                    color: 'var(--color-text-primary)', 
-                    cursor: 'pointer' 
-                  }}
-                >
-                  Details & Materials
-                  <span>{openAccordion === 'details' ? '−' : '+'}</span>
-                </button>
-                <div style={{ 
-                  maxHeight: openAccordion === 'details' ? '200px' : '0', 
-                  overflow: 'hidden', 
-                  transition: 'max-height var(--transition-mid)',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.7
-                }}>
-                  <p style={{ paddingBottom: 'var(--space-3)' }}>
-                    {product.materials || 'Crafted with premium materials to ensure longevity and timeless elegance.'}
-                  </p>
-                </div>
-              </div>
+
 
             </div>
 

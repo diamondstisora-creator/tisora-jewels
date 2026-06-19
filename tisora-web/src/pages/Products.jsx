@@ -203,10 +203,7 @@ export default function Products() {
                     <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.overview}</p>
                   </div>
                   
-                  <div className="mobile-hidden" style={{ marginBottom: 'var(--space-5)' }}>
-                    <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Materials</h4>
-                    <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.materials}</p>
-                  </div>
+
                   
                   <div className="mobile-hidden" style={{ display: 'flex', gap: '16px' }}>
                     <a href={`https://wa.me/919876543210?text=${encodeURIComponent(`Hi, I'm interested in the ${selectedProduct.name}.`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
@@ -255,7 +252,7 @@ export default function Products() {
               </div>
               <Link to="/contact" className="btn-primary" style={{ marginTop: 'var(--space-5)', display: 'inline-block' }}>Begin a Custom Commission</Link>
             </div>
-            <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', borderRadius: '4px', maxWidth: '320px', margin: '0 auto', width: '100%' }}>
+            <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', borderRadius: '4px', maxWidth: '450px', margin: '0 auto', width: '100%' }}>
               <video
                 src="/jewellery-video.webm"
                 autoPlay
