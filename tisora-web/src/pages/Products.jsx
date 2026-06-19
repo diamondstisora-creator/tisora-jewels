@@ -113,8 +113,8 @@ export default function Products() {
             gap: 'var(--space-5)'
           }}>
             {displayProducts.map((p, i) => (
-              <div 
-                key={p.uid} 
+              <div
+                key={p.uid}
                 className={`product-card reveal reveal-delay-${(i % 4) + 1}`}
                 onClick={() => setSelectedProduct(p)}
                 style={{ cursor: 'pointer', display: 'block', boxShadow: 'none' }}
@@ -145,7 +145,7 @@ export default function Products() {
 
           {/* Modal */}
           {selectedProduct && (
-            <div 
+            <div
               style={{
                 position: 'fixed',
                 top: 0, left: 0, right: 0, bottom: 0,
@@ -160,7 +160,7 @@ export default function Products() {
               }}
               onClick={() => setSelectedProduct(null)}
             >
-              <div 
+              <div
                 style={{
                   backgroundColor: '#000000',
                   borderRadius: '12px',
@@ -175,7 +175,7 @@ export default function Products() {
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <button 
+                <button
                   onClick={() => setSelectedProduct(null)}
                   style={{
                     position: 'absolute', top: '16px', right: '16px',
@@ -188,7 +188,7 @@ export default function Products() {
                 >
                   ✕
                 </button>
-                
+
                 {/* Left side: Video */}
                 <div style={{ flex: '1 1 300px', backgroundColor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
                   <video
@@ -200,19 +200,19 @@ export default function Products() {
                     style={{ width: '100%', height: '100%', objectFit: 'contain', maxHeight: '90vh' }}
                   />
                 </div>
-                
+
                 {/* Right side: Product Info */}
                 <div style={{ flex: '1 1 300px', padding: 'var(--space-5)', overflowY: 'auto', maxHeight: '90vh', color: '#ffffff' }}>
                   <span className="product-card__tag mobile-hidden" style={{ display: 'inline-block', marginBottom: 'var(--space-2)', color: '#ffffff', borderColor: '#ffffff' }}>Customized</span>
                   <h2 style={{ fontSize: '32px', marginBottom: 'var(--space-2)', fontFamily: 'var(--font-display)', fontWeight: 400, color: '#ffffff' }}>{selectedProduct.name}</h2>
-                  
+
                   <div className="mobile-hidden" style={{ marginBottom: 'var(--space-4)' }}>
                     <h4 style={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', color: '#ffffff' }}>Description</h4>
                     <p style={{ lineHeight: 1.6, color: '#ffffff' }}>{selectedProduct.overview}</p>
                   </div>
-                  
 
-                  
+
+
                   <div className="mobile-hidden" style={{ display: 'flex', gap: '16px' }}>
                     <a href={`https://wa.me/916359956385?text=${encodeURIComponent(`Hi, I'm interested in the ${selectedProduct.name}.`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                       INQUIRE NOW
@@ -258,7 +258,6 @@ export default function Products() {
                   <span style={{ color: 'var(--color-gold-primary)', marginTop: '2px' }}>•</span> Professional Photos and videos of Products.
                 </p>
               </div>
-              <Link to="/contact" className="btn-primary" style={{ marginTop: 'var(--space-5)', display: 'inline-block' }}>Begin a Custom Commission</Link>
             </div>
             <div className="reveal reveal-delay-2" style={{ overflow: 'hidden', borderRadius: '4px', maxWidth: '450px', margin: '0 auto', width: '100%' }}>
               <video

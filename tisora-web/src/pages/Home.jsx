@@ -339,7 +339,7 @@ export default function Home() {
           <div className="about-snippet">
             <div className="about-snippet__visual reveal">
               <img
-                src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=700&q=80"
+                src="/hero5.webp"
                 alt="Artisan hands shaping gold"
                 loading="lazy"
               />

@@ -63,8 +63,8 @@ export default function Navbar() {
               lineHeight: 1,
               transition: 'color var(--transition-fast)'
             }}
-            onMouseEnter={e => e.target.style.color = '#ffffff'}
-            onMouseLeave={e => e.target.style.color = 'var(--color-gold-light)'}
+              onMouseEnter={e => e.target.style.color = '#ffffff'}
+              onMouseLeave={e => e.target.style.color = 'var(--color-gold-light)'}
             >
               <img src="/whatsapp-icon.png" alt="WhatsApp" width="22" height="22" style={{ pointerEvents: 'none', objectFit: 'contain' }} />
               +91 6359 956 385
@@ -106,7 +106,7 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
-          
+
           {/* Mobile Contact Info */}
           <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px', width: '100%' }}>
             <a href="https://wa.me/916359956385" target="_blank" rel="noopener noreferrer" style={{
