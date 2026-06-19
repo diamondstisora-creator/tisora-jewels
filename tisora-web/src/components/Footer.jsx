@@ -48,29 +48,24 @@ export default function Footer() {
               </p>
             </div>
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.85, maxWidth: '300px' }}>
-              Cristal Diamonds, 201, Aashram Char Rasta, Bambavadi, Tunki, Katargam, Surat, Gujarat 395004
+              Vyas compaund, 201, Aashram Char Rasta, Bambavadi, Tunki, Katargam, Bambavadi, Surat, Gujarat 395004
             </p>
 
             {/* Social */}
-            <div style={{ display: 'flex', gap: '14px', marginTop: 'var(--space-4)' }}>
+            <div style={{ display: 'flex', gap: '16px', marginTop: 'var(--space-4)' }}>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/916359956385"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
                 style={{
-                  width: '40px', height: '40px',
-                  border: '1px solid var(--color-border)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--color-text-muted)',
-                  transition: 'border-color 200ms ease, color 200ms ease',
+                  transition: 'transform 200ms ease',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-gold-primary)'; e.currentTarget.style.color = 'var(--color-gold-primary)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-text-muted)'; }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+                <img src="/whatsapp-icon.png" alt="WhatsApp" width="40" height="40" style={{ objectFit: 'contain' }} />
               </a>
               <a
                 href="https://www.instagram.com/tisorajewels/"
@@ -78,58 +73,41 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Tisora Jewels on Instagram"
                 style={{
-                  width: '40px', height: '40px',
-                  border: '1px solid var(--color-border)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--color-text-muted)',
-                  transition: 'border-color 200ms ease, color 200ms ease',
+                  transition: 'transform 200ms ease',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-gold-primary)'; e.currentTarget.style.color = 'var(--color-gold-primary)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-text-muted)'; }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                </svg>
+                <img src="/instagram-logo.svg" alt="Instagram" width="32" height="32" style={{ objectFit: 'contain' }} />
               </a>
               <a
-                href="https://facebook.com/"
+                href="https://www.facebook.com/people/Tisora-Jewels/61585129438602/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Tisora Jewels on Facebook"
                 style={{
-                  width: '40px', height: '40px',
-                  border: '1px solid var(--color-border)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--color-text-muted)',
-                  transition: 'border-color 200ms ease, color 200ms ease',
+                  transition: 'transform 200ms ease',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-gold-primary)'; e.currentTarget.style.color = 'var(--color-gold-primary)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-text-muted)'; }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
+                <img src="/facebook-logo.svg" alt="Facebook" width="32" height="32" style={{ objectFit: 'contain' }} />
               </a>
               <a
-                href="https://pinterest.com/"
+                href="https://in.pinterest.com/tisorajewels/?actingBusinessId=974185100554339009"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Tisora Jewels on Pinterest"
                 style={{
-                  width: '40px', height: '40px',
-                  border: '1px solid var(--color-border)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--color-text-muted)',
-                  transition: 'border-color 200ms ease, color 200ms ease',
+                  transition: 'transform 200ms ease',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--color-gold-primary)'; e.currentTarget.style.color = 'var(--color-gold-primary)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.color = 'var(--color-text-muted)'; }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/>
-                </svg>
+                <img src="/pinterest-logo.svg" alt="Pinterest" width="32" height="32" style={{ objectFit: 'contain' }} />
               </a>
             </div>
           </div>
@@ -203,14 +181,14 @@ export default function Footer() {
               <div>
                 <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--color-text-muted)', marginBottom: '4px' }}>WhatsApp</p>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/916359956385"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontSize: '14px', color: 'var(--color-text-secondary)', transition: 'color 200ms ease' }}
                   onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
                   onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
                 >
-                  +91 98765 43210
+                  +91 6359 956 385
                 </a>
               </div>
             </div>

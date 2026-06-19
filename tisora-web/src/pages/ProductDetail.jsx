@@ -125,7 +125,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Inquire Now Button */}
-            <a href={`https://wa.me/919876543210?text=${encodeURIComponent(`Hi, I'm interested in the ${product.name}.`)}`} target="_blank" rel="noopener noreferrer" style={{ 
+            <a href={`https://wa.me/916359956385?text=${encodeURIComponent(`Hi, I'm interested in the ${product.name}.`)}`} target="_blank" rel="noopener noreferrer" style={{ 
               display: 'block',
               textAlign: 'center',
               width: '100%', 

@@ -146,14 +146,44 @@ export default function Contact() {
   const [openFaq, setOpenFaq] = useState(null);
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   useReveal();
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: '', email: '', phone: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
+    setSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "16218a5c-f0df-4d48-a1a5-e039f23d235a",
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: form.subject,
+          message: form.message
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        console.error("Form submission error", result);
+        alert("There was an issue submitting your message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Network error", error);
+      alert("Network error. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -184,13 +214,11 @@ export default function Contact() {
               </h2>
 
               <div className="contact-info__item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="contact-info__icon">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+                <img src="/whatsapp-icon.png" alt="WhatsApp" width="30" height="30" className="contact-info__icon" style={{ border: 'none', stroke: 'none', objectFit: 'contain' }} />
                 <div>
                   <p className="contact-info__label">WhatsApp</p>
                   <a
-                    href="https://wa.me/919876543210"
+                    href="https://wa.me/916359956385"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-info__value"
@@ -198,16 +226,13 @@ export default function Contact() {
                     onMouseEnter={e => (e.target.style.color = 'var(--color-gold-primary)')}
                     onMouseLeave={e => (e.target.style.color = 'var(--color-text-secondary)')}
                   >
-                    +91 98765 43210
+                    +91 6359 956 385
                   </a>
                 </div>
               </div>
 
               <div className="contact-info__item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="contact-info__icon">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
+                <img src="/email-logo.svg" alt="Email" width="24" height="24" className="contact-info__icon" style={{ border: 'none', stroke: 'none', objectFit: 'contain' }} />
                 <div>
                   <p className="contact-info__label">Email</p>
                   <a
@@ -223,11 +248,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-info__item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="contact-info__icon">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                </svg>
+                <img src="/instagram-logo.svg" alt="Instagram" width="24" height="24" className="contact-info__icon" style={{ border: 'none', stroke: 'none', objectFit: 'contain' }} />
                 <div>
                   <p className="contact-info__label">Instagram</p>
                   <a
@@ -327,8 +348,8 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '18px' }}>
-                  Send Message
+                <button type="submit" className="btn-primary" disabled={submitting} style={{ width: '100%', justifyContent: 'center', padding: '18px', opacity: submitting ? 0.7 : 1, cursor: submitting ? 'not-allowed' : 'pointer' }}>
+                  {submitting ? 'Sending...' : 'Send Message'}
                 </button>
 
                 {submitted && (

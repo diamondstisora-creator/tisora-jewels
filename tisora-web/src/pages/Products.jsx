@@ -214,7 +214,7 @@ export default function Products() {
 
                   
                   <div className="mobile-hidden" style={{ display: 'flex', gap: '16px' }}>
-                    <a href={`https://wa.me/919876543210?text=${encodeURIComponent(`Hi, I'm interested in the ${selectedProduct.name}.`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+                    <a href={`https://wa.me/916359956385?text=${encodeURIComponent(`Hi, I'm interested in the ${selectedProduct.name}.`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff', color: '#000000', borderColor: '#ffffff', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                       INQUIRE NOW
                     </a>
                   </div>
