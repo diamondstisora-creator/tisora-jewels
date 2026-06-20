@@ -46,7 +46,7 @@ export const products = [
   },
   {
     "id": 4,
-    "name": "Marquise Engagement Ring",
+    "name": "Mixed Shape Tennis Chain",
     "category": "Bangles",
     "tag": "Limited Edition",
     "price": "₹320,000",
@@ -121,7 +121,7 @@ export const products = [
   },
   {
     "id": 9,
-    "name": "Pear Hidden Halo Ring",
+    "name": "Tennis Bracelet",
     "category": "Rings",
     "tag": "Bestseller",
     "price": "₹145,000",
